@@ -26,6 +26,3 @@ jobs:
         sudo pip install pipenv
         pipenv sync --dev
         
-    - name: Make Lint with Flake8
-      run: |
-        pipenv run flake8
