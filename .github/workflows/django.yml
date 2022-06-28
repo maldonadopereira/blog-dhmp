@@ -1,0 +1,31 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    env:
+      PIPENV_NO_INHERIT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.10.0
+        
+    - name: Install Dependencies
+      run: |
+        sudo pip install pipenv
+        pipenv sync --dev
+        
+    - name: Make Lint with Flake8
+      run: |
+        pipenv run flake8
