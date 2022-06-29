@@ -25,6 +25,8 @@ jobs:
       run: |
         sudo pip install pipenv
         pipenv sync --dev
+        cp contrib/env-sample .env
+
         
     - name: Fazendo lint
       run: |
