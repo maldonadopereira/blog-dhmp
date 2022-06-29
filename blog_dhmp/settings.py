@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'collectfast',
     'django.contrib.staticfiles',
     # Apps Locais
     'core',
@@ -128,6 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
+COLLECTFAST_ENABLED = False
 # Configuração de armazenamento no S3 AWS
 # -------------------------------------------------------------------------
 if AWS_ACCESS_KEY_ID:
@@ -138,6 +140,12 @@ if AWS_ACCESS_KEY_ID:
     AWS_AUTO_CREATE_BUCKET = False
     AWS_QUERYSTRING_AUTH = True
     AWS_S3_CUSTOM_DOMAIN = None
+
+    # Nova variável após atualização da Lib
+    COLLECTFAST_STRATEGY = 'collectfast.strategies.boto3.Boto3Strategy'
+
+    COLLECTFAST_ENABLED = True
+    AWS_DEFAULT_ACL = None
 
     # Static Assets
     # -------------------------------------------------------------------------
