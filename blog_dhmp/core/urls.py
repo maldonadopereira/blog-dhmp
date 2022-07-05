@@ -1,4 +1,4 @@
-from core import views
+from blog_dhmp.core import views
 from django.urls import path
 
 app_name = 'core'

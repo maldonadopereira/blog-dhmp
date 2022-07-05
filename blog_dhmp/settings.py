@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     # Apps Locais
-    'core',
+    'blog_dhmp.core',
+    'blog_dhmp.post'
 ]
 
 MIDDLEWARE = [
