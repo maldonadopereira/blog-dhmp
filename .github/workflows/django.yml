@@ -34,5 +34,5 @@ jobs:
 
     - name: Rodando testes automáticos
       run: |
-        pipenv run pytest --cov
+        pipenv run pytest --cov=blog_dhmp
         pipenv run codecov
