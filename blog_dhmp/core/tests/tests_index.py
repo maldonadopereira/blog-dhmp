@@ -13,9 +13,5 @@ def test_status_code(resp):
     assert resp.status_code == 200
 
 
-def test_titulo():
-    pass
-
-
 def test_title(resp):
     assert_contains(resp, '<title>Blog - Home</title>')

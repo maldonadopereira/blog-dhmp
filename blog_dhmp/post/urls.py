@@ -1,8 +1,8 @@
 from blog_dhmp.core import views
 from django.urls import path
 
-app_name = 'core'
+app_name = 'post'
 
 urlpatterns = [
-    path('', views.index, name='index')
+    path('<slug:slug>', views.index, name='detalhe')
 ]
