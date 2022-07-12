@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'collectfast',
     'django.contrib.staticfiles',
+    # 3rd party
+    'ckeditor',
+    'ckeditor_uploader',
     # Apps Locais
     'blog_dhmp.core',
-    'blog_dhmp.post'
+    'blog_dhmp.post',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +130,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

@@ -13,6 +13,8 @@ django-s3-folder-storage = "*"
 collectfast = "*"
 atomicwrites = "*"
 dj-database-url = "*"
+django-ckeditor = "*"
+pillow = "*"
 
 [dev-packages]
 flake8 = "*"
