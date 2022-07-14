@@ -1,7 +1,6 @@
 from django.db import models
 from blog_dhmp.core.models import Base
 from django.contrib.auth.models import User
-from ckeditor.fields import RichTextField
 from django.urls import reverse
 # Create your models here.
 
@@ -9,7 +8,7 @@ from django.urls import reverse
 class Post(Base):
     titulo = models.CharField('Titulo', max_length=64)
     subtitulo = models.CharField('Subtitulo', max_length=128)
-    texto = RichTextField()
+    texto = models.TextField('Texto')
     usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     slug = models.SlugField(unique=True)
 
