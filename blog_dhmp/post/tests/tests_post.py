@@ -24,3 +24,7 @@ def test_titulo_do_post(resp, post: Post):
     titulo = post.titulo
     titulo.capitalize()
     assert_contains(resp, f'<h1>{titulo}</h1>')
+
+
+def test_subtitulo_do_post(resp, post: Post):
+    assert_contains(resp, f'<h1>{post.titulo}</h1>')
