@@ -41,9 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'collectfast',
     'django.contrib.staticfiles',
-    # 3rd party
-    'ckeditor',
-    'ckeditor_uploader',
     # Apps Locais
     'blog_dhmp.core',
     'blog_dhmp.post',

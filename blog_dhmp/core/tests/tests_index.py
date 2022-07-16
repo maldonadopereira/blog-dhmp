@@ -4,7 +4,7 @@ from blog_dhmp.django_assertions import assert_contains
 
 
 @pytest.fixture
-def resp(client):
+def resp(client, db):
     resp = client.get(reverse('core:index'))
     return resp
 
@@ -15,3 +15,7 @@ def test_status_code(resp):
 
 def test_title(resp):
     assert_contains(resp, '<title>Blog - Home</title>')
+
+
+def test_link_home(resp):
+    assert_contains(resp, f'href="{reverse("core:index")}">Home</a>')
