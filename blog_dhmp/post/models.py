@@ -11,6 +11,7 @@ class Post(Base):
     texto = models.TextField('Texto')
     usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     slug = models.SlugField(unique=True)
+    imagem = models.ImageField(upload_to='fotos/%d/%m/%Y', blank=True)
 
     class Meta:
         verbose_name = 'Post'
